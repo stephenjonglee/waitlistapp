@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log-In Page</title>
+    <link  rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+</head>
+<body>
+    <div class="title">
+        <h1>Welcome Back!</h1>
+    </div>
+    <form id="login-form" action="/on_login" method='POST'>
+        <div class="form-label-group">
+            <input type="email" id="email" name="email" class="form-control" placeholder="Username" required autofocus>
+            <label for="email"></label>
+        </div>
+        <div class="form-label-group">
+            <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+            <label for="password">Password</label>
+        </div>
+        <div class="custom-control custom-checkbox mb-3">
+            <input type="checkbox" class="custom-control-input" id="customCheck1">
+            <label class="custom-control-label text-white-50" for="customCheck1">Remember password</label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign in</button>
+        <div class="text-center">
+            <a class="small" href="#">Forgot password?</a></div>
+    </form>
+</body>
+</html>
