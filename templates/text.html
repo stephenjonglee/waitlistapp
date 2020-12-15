@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link  rel="stylesheet" href="../static/css/main.css" />
+</head>
+<body>
+    <div class="title">
+        <h1>Welcome to Re-Ezervation</h1>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <p>You no longer have to wait in line to eat at a restaurant.</p>
+            <p>Here, you can find your restaurant and enter the waitlist.</p>
+            <p>You don't have to wait in line. Just show up before your time is up.</p>
+            <a href="{{ url_for('restaurant') }}" class="button">Find a restaurant!</a>
+        </div>
+        
+        <div class="column">
+            <p>You can also log in as a restaurant manager.</p>
+            <p>You can add your restaurant to this website and use this waitlist.</p>
+            <p>Managers are able to access their waitlist and modify it such as checking in.</p>
+            <a href="{{ url_for('login') }}" class="button">Log-In as Manager</a> 
+        </div>
+
+        <div class="column">
+            <p>Don't have an account?</p>
+            <p>Register here!</p>
+            <a href="{{ url_for('register') }}" class="button">Register an account</a> 
+        </div>
+    </div>
+</body>
+</html>
