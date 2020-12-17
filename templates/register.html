@@ -26,13 +26,29 @@
 	<link rel="stylesheet" type="text/css" href="../static/css/util_log.css">
 	<link rel="stylesheet" type="text/css" href="../static/css/login.css">
 <!--===============================================================================================-->
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
-	
+	<!-- Navbar (sit on top) -->
+	<div class="w3-top">
+		<div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+		<a href="{{ url_for('index') }}" class="w3-bar-item w3-button">Re-Ezervation</a>
+		<!-- Right-sided navbar links. Hide them on small screens -->
+		<div class="w3-right w3-hide-small">
+			<a href="{{ url_for('index') }}" class="w3-bar-item w3-button">Home</a>
+			<a href="{{ url_for('login') }}" class="w3-bar-item w3-button">Login</a>
+		</div>
+		</div>
+	</div>
+
+	{% if error %}
+		<p class=error style="margin-top: 50px;">Error: {{ error }}</p>
+	{% endif %}
+
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" method="POST">
 					<span class="login100-form-title p-b-33">
 						Account Register
 					</span>
@@ -55,7 +71,7 @@
 					</div>
 
 					<div class="container-login100-form-btn m-t-20">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" type="submit">
 							Register
 						</button>
 					</div>

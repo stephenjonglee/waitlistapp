@@ -24,9 +24,23 @@
 
     <!-- Main CSS-->
     <link href="../static/css/add_rest.css" rel="stylesheet" media="all">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
+    <!-- Navbar (sit on top) -->
+	<div class="w3-top">
+		<div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+		<a href="{{ url_for('account') }}" class="w3-bar-item w3-button">Re-Ezervation</a>
+		<!-- Right-sided navbar links. Hide them on small screens -->
+		<div class="w3-right w3-hide-small">
+            <a href="{{ url_for('account') }}" class="w3-bar-item w3-button">Home</a>
+            <a href="{{ url_for('logout') }}" class="w3-bar-item w3-button">Logout</a>
+		</div>
+		</div>
+    </div>
+    
     <div class="page-wrapper bg-red p-t-180 p-b-100 font-robo">
         <div class="wrapper wrapper--w960">
             <div class="card card-2">

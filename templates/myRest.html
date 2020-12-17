@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Restaurants</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="../static/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/css/util.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/rest.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+	<!-- Navbar (sit on top) -->
+	<div class="w3-top">
+		<div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+		<a href="{{ url_for('account') }}" class="w3-bar-item w3-button">Re-Ezervation</a>
+		<!-- Right-sided navbar links. Hide them on small screens -->
+		<div class="w3-right w3-hide-small">
+			<a href="{{ url_for('account') }}" class="w3-bar-item w3-button">Home</a>
+			<a href="{{ url_for('logout') }}" class="w3-bar-item w3-button">Logout</a>
+		</div>
+		</div>
+	</div>
+
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+					<table>
+						<thead>
+							<tr class="table100-head">
+								<th class="column1">Name</th>
+								<th class="column2">Location</th>
+								<th class="column3">Edit</th>
+								<th class="column4">Delete</th>
+								<th class="column5">Waitlist</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for myrest in myrestaurants %}
+							<tr>
+								<td class="column1">{{myrest[2]}}</td>
+								<th class="column2">{{myrest[3]}}</th>
+								<td class="column3"><a href="{{ url_for('edit', rest_id=myrest[1]) }}">Link</a></td>
+								<td class="column4"><a href="{{ url_for('delete', rest_id=myrest[1]) }}">Link</a></td>
+								<td class="column5"><a href="{{ url_for('my_wait', rest_id=myrest[1]) }}">Link</a></td>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	
+
+<!--===============================================================================================-->	
+	<script src="../static/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/vendor/bootstrap/js/popper.js"></script>
+	<script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/js/rest.js"></script>
+
+</body>
+</html>

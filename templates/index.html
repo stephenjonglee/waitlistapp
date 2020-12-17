@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<title>Re-Ezervation</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+h1 {
+    margin-top: 100px;
+}
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="{{ url_for('index') }}" class="w3-bar-item w3-button">Re-Ezervation</a>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="{{ url_for('index') }}" class="w3-bar-item w3-button">Home</a>
+      <a href="{{ url_for('login') }}" class="w3-bar-item w3-button">Login</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+  <img class="w3-image" src="../static/images/w3images/hamburger.jpg" alt="Hamburger Catering" width="1600" height="800">
+  <div class="w3-display-bottomleft w3-padding-large w3-opacity">
+    <h1 class="w3-xxlarge">Welcome!</h1>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+  <div class="w3-row w3-padding-64" id="about">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+     <img src="../static/images/w3images/tablesetting2.jpg" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+    </div>
+
+    <div class="w3-col m6 w3-padding-large">
+        <h1 class="w3-center">Find Your Restaurant</h1><br>
+        <h5 class="w3-center">Don't Wait No More</h5>
+        <p class="w3-large">You no longer have to wait in line to eat at a restaurant.
+            Here, you can find your restaurant and enter the waitlist.
+            You don't have to wait in line. Just show up before your time is up.</p>
+        <a class="w3-button w3-white w3-border w3-border-blue w3-round-xxlarge" href="{{ url_for('restaurant') }}">Find a restaurant!</a>    
+    </div>
+  </div>
+  
+  <hr>
+  
+  <!-- Log In Section -->
+  <div class="w3-row w3-padding-64" id="menu">
+    <div class="w3-col l6 w3-padding-large">
+        <h1 class="w3-center">Restaurant Manager</h1><br>
+        <h5 class="w3-center">Log In</h5>
+        <p class="w3-large">You can also use this to manage your restaurant.
+            You can log in as a restaurant manager and add your restaurant.
+            Customers can find your restaurant and get in the waitlist that you
+            have access to.</p>
+        <a class="w3-button w3-white w3-border w3-border-blue w3-round-xxlarge" href="{{ url_for('login') }}">Log In</a> 
+
+        <h1 class="w3-center">Don't have an Account?</h1><br>
+        <h5 class="w3-center">Register Now</h5>
+        <a class="w3-button w3-white w3-border w3-border-blue w3-round-xxlarge" href="{{ url_for('register') }}">Register</a>   
+    </div>
+    <div class="w3-col l6 w3-padding-large">
+      <img src="../static/images/w3images/tablesetting.jpg" class="w3-round w3-image w3-opacity-min" alt="Menu" style="width:100%">
+    </div>
+  </div>
+
+<!-- End page content -->
+</div>
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+</body>
+</html>

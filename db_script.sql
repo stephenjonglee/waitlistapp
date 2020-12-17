@@ -37,7 +37,7 @@ CREATE TABLE WAITLIST (
     cust_id INTEGER PRIMARY KEY AUTOINCREMENT,
     cust TEXT NOT NULL,
     size int NOT NULL,
-    start_time time NOT NULL,
+    contact TEXT NOT NULL,
     FOREIGN KEY (list_id) REFERENCES RESTAURANT(rest_id)
 );
 

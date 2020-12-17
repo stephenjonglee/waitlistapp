@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<title>Re-Ezervation</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="{{ url_for('account') }}" class="w3-bar-item w3-button">Re-Ezervation</a>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="{{ url_for('account') }}" class="w3-bar-item w3-button">Home</a>
+      <a href="{{ url_for('logout') }}" class="w3-bar-item w3-button">Logout</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+  <img class="w3-image" src="../static/images/w3images/hamburger.jpg" alt="Hamburger Catering" width="1600" height="800">
+  <div class="w3-display-bottomleft w3-padding-large w3-opacity">
+    <h1 class="w3-xxlarge">Welcome Back! If you want to make a reservation, then logout.</h1>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+  <div class="w3-row w3-padding-64" id="about">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+     <img src="../static/images/w3images/tablesetting2.jpg" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+    </div>
+
+    <div class="w3-col m6 w3-padding-large">
+        <h1 class="w3-center">Add a Restaurant</h1><br>
+        <h5 class="w3-center">Put your restaurant out there!</h5>
+        <p class="w3-large">Add your restaurant to the list and let others be able to see it. Customers will be able to
+          reserve a spot in the waitlist and you don't have to worry about making your own waitlist. You can add multiple
+          restaurants if you do own multiple!
+        </p>
+        <a class="w3-button w3-white w3-border w3-border-blue w3-round-xxlarge" href="{{ url_for('add_rest') }}">Add a restaurant!</a>    
+    </div>
+  </div>
+  
+  <hr>
+  
+  <!-- Log In Section -->
+  <div class="w3-row w3-padding-64" id="menu">
+    <div class="w3-col l6 w3-padding-large">
+        <h1 class="w3-center">Open Your Restaurant Now!</h1><br>
+        <h5 class="w3-center">Manage your Restaurants</h5>
+        <p class="w3-large">You can view your restaurants that you added in the link below. You can also change or update your
+          restaurants information if you happen to change any information that you would like to update so that customers won't
+          be confused. I highly recommend updating it as soon as possible. You can also delete them if you happen to close down.
+        </p>
+        <p class="w3-large">You can also access your waitlists for your restauants. To start opening your restaurant, just go to the
+          link below and find your restaurant and click waitlist. You will be able to see the waitlist and your customers filling
+          up. You can then check them off as seats are open and get your restaurant rolling!
+        </p>
+        <a class="w3-button w3-white w3-border w3-border-blue w3-round-xxlarge" href="{{ url_for('my_rest') }}">My Restaurants</a>  
+    </div>
+    <div class="w3-col l6 w3-padding-large">
+      <img src="../static/images/w3images/tablesetting.jpg" class="w3-round w3-image w3-opacity-min" alt="Menu" style="width:100%">
+    </div>
+  </div>
+
+<!-- End page content -->
+</div>
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+</body>
+</html>

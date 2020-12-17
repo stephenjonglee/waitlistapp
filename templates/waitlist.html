@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Table V05</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="../static/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/css/util.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/waitlist.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+	<!-- Navbar (sit on top) -->
+	<div class="w3-top">
+		<div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+		<a href="{{ url_for('account') }}" class="w3-bar-item w3-button">Re-Ezervation</a>
+		<!-- Right-sided navbar links. Hide them on small screens -->
+		<div class="w3-right w3-hide-small">
+			<a href="{{ url_for('index') }}" class="w3-bar-item w3-button">Home</a>
+			<a href="{{ url_for('login') }}" class="w3-bar-item w3-button">Login</a>
+		</div>
+		</div>
+	</div>
+
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<form method="POST">
+					<button type="submit" class="btn btn-secondary btn-lg" id="submit" name="submit">Reserve</button>
+				</form>
+				<div class="table100 ver1">
+					<div class="wrap-table100-nextcols js-pscroll">
+						<div class="table100-nextcols">
+							<table>
+								<caption>Waitlist for {{name}}</caption>
+								<thead>
+									<tr class="row100 head">
+										<th class="cell100 column2">Position</th>
+										<th class="cell100 column3">Name</th>
+										<th class="cell100 column4">Size</th>
+										<th class="cell100 column5">Number</th>
+									</tr>
+								</thead>
+								<tbody>
+									{% for cust in cust_list %}
+									<tr>
+										<td class="column1">{{loop.index}}</td>
+										<td class="column2">{{cust[2]}}</td>
+										<td class="column3">{{cust[3]}}</td>
+										<td class="column4">{{cust[4]}}</td>
+									</tr>
+									{% endfor %}
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<!--===============================================================================================-->	
+	<script src="../static/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/vendor/bootstrap/js/popper.js"></script>
+	<script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+	<script>
+		$('.js-pscroll').each(function(){
+			var ps = new PerfectScrollbar(this);
+
+			$(window).on('resize', function(){
+				ps.update();
+			})
+
+			$(this).on('ps-x-reach-start', function(){
+				$(this).parent().find('.table100-firstcol').removeClass('shadow-table100-firstcol');
+			});
+
+			$(this).on('ps-scroll-x', function(){
+				$(this).parent().find('.table100-firstcol').addClass('shadow-table100-firstcol');
+			});
+
+		});			
+	</script>
+<!--===============================================================================================-->
+	<script src="../static/js/waitlist.js"></script>
+
+</body>
+</html>
